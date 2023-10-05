@@ -27,7 +27,7 @@ You can tweet a picture to the bot and it will process it for you.
 
 Run it on your own images! First, [install Go](https://golang.org/doc/install).
 
-    go install github.com/Moskensoap/primitive@latest
+    go install github.com/moskensoap/primitive@latest
     primitive -i input.png -o output.png -n 100
 
 If you wish to generate a gif, ffmpeg will be needed, you can install it by the following command if in Ubuntu. Otherwise, in Windows, you can download the binary in https://ffmpeg.org/download.html#build-windows then into https://www.gyan.dev/ffmpeg/builds/, and add the bin to path of your environmentvariable.
