@@ -94,14 +94,12 @@ func SaveGIFImageMagick(path string, frames []image.Image, delay, lastDelay int)
 		SavePNG(path, im)
 	}
 	args := []string{
-		"-loop", "0",
-		"-delay", fmt.Sprint(delay),
-		filepath.Join(dir, "*.png"),
-		"-delay", fmt.Sprint(lastDelay - delay),
-		filepath.Join(dir, fmt.Sprintf("%06d.png", len(frames)-1)),
+		"-framerate", "5",
+		"-y",
+		"-i", filepath.Join(dir, "%06d.png"),
 		path,
 	}
-	cmd := exec.Command("convert", args...)
+	cmd := exec.Command("ffmpeg", args...)
 	if err := cmd.Run(); err != nil {
 		return err
 	}
