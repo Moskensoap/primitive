@@ -55,7 +55,7 @@ Depending on the output filename extension provided, you can produce different t
 - `PNG`: raster output
 - `JPG`: raster output
 - `SVG`: vector output
-- `GIF`: animated output showing shapes being added - requires ImageMagick (specifically the `convert` command)
+- `GIF`: animated output showing shapes being added - requires ImageMagick (specifically the `convert` command)__(not require ImageMagick anymore, instead of ffmpeg, you need to download ffmpeg and add its bin to path, this fork has changed the "func SaveGIFImageMagick" in /primitive/util.go)__
 
 For PNG and SVG outputs, you can also include `%d`, `%03d`, etc. in the filename. In this case, each frame will be saved separately.
 
